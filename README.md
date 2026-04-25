@@ -10,7 +10,7 @@
 
 ##  About Me
 
-I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security engineering — building toward **CCNP Security** and a career in network security.
+I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security engineering building toward **CCNP Security** and a career in network security.
 
 I believe in learning by doing. Every lab here represents a real concept I've configured, broken, debugged, and understood from the ground up.
 
@@ -40,7 +40,7 @@ nsec-portfolio/
 
 ---
 
-## 🔬 Labs & Projects
+##  Labs & Projects
 
 ---
 
@@ -72,7 +72,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Key Concepts Covered:**
 - IEEE 802.1Q Trunking across hierarchical switch layers
-- VLAN Trunking Protocol (VTP) — Server/Client/Transparent modes
+- VLAN Trunking Protocol (VTP)  Server/Client/Transparent modes
 - Router on a Stick (inter-VLAN routing via sub-interfaces)
 - DHCP pools per VLAN with ip helper-address forwarding
 - Spanning Tree Protocol (STP) PortFast configuration
