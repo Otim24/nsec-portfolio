@@ -52,7 +52,8 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Topology Overview:**
 
-> 📸 **[SCREENSHOT: Full Packet Tracer topology showing all switches, router, servers and PCs with green links]**
+>  **<img width="1557" height="592" alt="image" src="https://github.com/user-attachments/assets/4763ab9d-2722-4947-8710-b3a68c312a60" />
+**
 
 **VLAN Design:**
 
