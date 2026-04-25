@@ -94,38 +94,6 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Tools Used:** Cisco Packet Tracer, Cisco IOS CLI, Cisco 2960 Switches, Cisco 2811 Router
 
----
-
-## Tools & Technologies
-
-**Networking:**
-
-![Cisco](https://img.shields.io/badge/Cisco-IOS-1BA0D7?logo=cisco)
-![Packet Tracer](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7)
-![pfSense](https://img.shields.io/badge/Firewall-pfSense-darkblue)
-
-**Security Operations:**
-
-![Wazuh](https://img.shields.io/badge/SIEM-Wazuh-blue)
-![Suricata](https://img.shields.io/badge/IDS-Suricata-orange)
-![MITRE](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red)
-
-**Systems:**
-
-![Linux](https://img.shields.io/badge/OS-Linux-black?logo=linux)
-
----
-
-## Certifications & Studies
-
-| Certification | Status |
-|---------------|--------|
-| ISC2 Certified in Cybersecurity (CC) | In Progress |
-| Cisco CCNA | Studying |
-| Cisco CCNP Security | Target |
-
----
-
 ## Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
