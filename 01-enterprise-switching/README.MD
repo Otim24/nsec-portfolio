@@ -154,7 +154,7 @@ ip helper-address 192.168.10.254
 > 📸 **[SCREENSHOT: Ping from PC0 VLAN 10 to PC in VLAN 30 — successful]**
 
 ### Cross-Router Connectivity
-> 📸 **[SCREENSHOT: Ping from PC to AD Server 172.16.0.10 — successful]**
+![Cross-Router Connectivity](./ping.png)
 
 ---
 
