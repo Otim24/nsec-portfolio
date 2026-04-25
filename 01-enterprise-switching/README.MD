@@ -147,7 +147,7 @@ ip helper-address 192.168.10.254
 > 📸 **[SCREENSHOT: show vlan brief — VLAN 10 IT, VLAN 20 SALES, VLAN 30 HR all active]**
 
 ### Routing Table
-> 📸 **[SCREENSHOT: show ip route on Router — all 4 networks visible]**
+01-enterprise-switching/image.png
 
 ### DHCP Assignment
 > 📸 **[SCREENSHOT: PC Desktop showing DHCP assigned IP in correct subnet]**
