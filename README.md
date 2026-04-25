@@ -87,14 +87,6 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 - Spanning Tree Protocol (STP) PortFast configuration
 - Static IP assignment for server infrastructure
 
-**Verification:**
-
-<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/710e83cf-18e8-487d-83d6-1c8eb88a6b80" />
-
-<img width="1919" height="1056" alt="image" src="https://github.com/user-attachments/assets/9863c2ec-e065-478e-a2ed-ef9992dcfa72" />
-
-
-
 **Tools Used:** Cisco Packet Tracer, Cisco IOS CLI, Cisco 2960 Switches, Cisco 2811 Router
 
 ## Connect With Me
