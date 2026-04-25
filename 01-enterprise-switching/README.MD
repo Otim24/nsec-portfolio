@@ -142,7 +142,7 @@ ip helper-address 192.168.10.254
 > 📸 **[SCREENSHOT: show vtp status — VTP Domain ISBAT, Mode Client]**
 
 ### VLAN Propagation
-![VLAN Propagation](./vlan brief.png)
+![VLAN Propagation](./vlanbrief.png)
 
 ### Routing Table
 ![Routing Table](./image.png)
