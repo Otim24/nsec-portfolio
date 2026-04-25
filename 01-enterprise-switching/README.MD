@@ -8,8 +8,6 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring a th
 
 ## Topology
 
-![Topology](./image.png)
-
 ### Device Inventory
 
 | Device | Model | Role |
@@ -147,7 +145,7 @@ ip helper-address 192.168.10.254
 > 📸 **[SCREENSHOT: show vlan brief — VLAN 10 IT, VLAN 20 SALES, VLAN 30 HR all active]**
 
 ### Routing Table
-
+![Routing Table](./image.png)
 
 ### DHCP Assignment
 > 📸 **[SCREENSHOT: PC Desktop showing DHCP assigned IP in correct subnet]**
