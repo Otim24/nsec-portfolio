@@ -129,16 +129,6 @@ Topics planned: CTI lifecycle, MITRE ATT&CK framework, Diamond Model, Kill Chain
 
 ---
 
-##  Certifications & Studies
-
-| Certification | Status |
-|---------------|--------|
-| ISC2 Certified in Cybersecurity (CC) | In Progress |
-| Cisco CCNA | Studying |
-| Cisco CCNP Security | Target |
-
----
-
 ## Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
