@@ -59,7 +59,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 **Topology Overview:**
 
 > <img width="1557" height="592" alt="image" src="https://github.com/user-attachments/assets/4763ab9d-2722-4947-8710-b3a68c312a60" />
-<img width="1919" height="1056" alt="image" src="https://github.com/user-attachments/assets/9863c2ec-e065-478e-a2ed-ef9992dcfa72" />
+
 
 
 
@@ -90,6 +90,8 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 **Verification:**
 
 <img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/710e83cf-18e8-487d-83d6-1c8eb88a6b80" />
+
+<img width="1919" height="1056" alt="image" src="https://github.com/user-attachments/assets/9863c2ec-e065-478e-a2ed-ef9992dcfa72" />
 
 
 
