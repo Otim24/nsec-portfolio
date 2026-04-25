@@ -1,4 +1,4 @@
-Enterprise Switching VLANs, Trunking & Inter-VLAN Routing
+## Enterprise Switching VLANs, Trunking & Inter-VLAN Routing
 
 ## Overview
 
