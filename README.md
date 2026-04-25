@@ -1,4 +1,4 @@
-# 🛡️ Network Security Engineering Portfolio
+#  Network Security Engineering Portfolio
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Focus](https://img.shields.io/badge/Focus-Network%20Security%20%26%20SOC-blue)
