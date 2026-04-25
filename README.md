@@ -10,15 +10,15 @@
 
 ## 👤 About Me
 
-I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security operations — building toward **CCNP Security** and a career at the intersection of network security and SOC engineering.
+I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security operations, building toward **CCNP Security** and a career at the intersection of network security and SOC engineering.
 
 I believe in learning by doing. Every lab here represents a real concept I've configured, broken, debugged, and understood from the ground up.
 
-> *"I'm currently exploring both Network Security Engineering and Security Operations — building practical skills across enterprise networking, SIEM, IDS/IPS, and threat intelligence, because the best security engineers understand both sides."*
+> *"I'm currently exploring both Network Security Engineering and Security Operations, building practical skills across enterprise networking, SIEM, IDS/IPS, and threat intelligence, because the best security engineers understand both sides."*
 
 ---
 
-## 🎯 Goals
+##  Goals
 
 - Master enterprise networking fundamentals (VLANs, routing, switching)
 - Build practical network security skills (firewalls, IDS/IPS, VPNs)
@@ -28,7 +28,7 @@ I believe in learning by doing. Every lab here represents a real concept I've co
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 nsec-portfolio/
@@ -44,14 +44,14 @@ nsec-portfolio/
 
 ---
 
-## 🌐 Network Security Labs
+##  Network Security Labs
 
 *These labs focus on building, securing, and managing enterprise network infrastructure.*
 
 ---
 
-### 01 — Enterprise Switching
-📁 [`01-enterprise-switching/`](./01-enterprise-switching/)
+### 01 Enterprise Switching
+ [`01-enterprise-switching/`](./01-enterprise-switching/)
 
 **Description:**
 A full enterprise switching topology built in Cisco Packet Tracer featuring hierarchical network design with Core, Distribution, and Access layers. Includes three segmented VLANs, dynamic DHCP assignment, and inter-VLAN routing through a dedicated router.
@@ -96,45 +96,45 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 ---
 
-### 02 — Network Security *(Coming Soon)*
-📁 `02-network-security/`
+### 02 Network Security *(Coming Soon)*
+ `02-network-security/`
 
 Topics planned: ACLs, Zone-Based Firewalls, Security Policies, Port Security
 
 ---
 
-### 03 — IDS/IPS *(Coming Soon)*
-📁 `03-ids-ips/`
+### 03 IDS/IPS *(Coming Soon)*
+ `03-ids-ips/`
 
 Topics planned: Suricata on pfSense, custom rule writing, alert analysis
 
 ---
 
-### 04 — VPN & Encryption *(Coming Soon)*
-📁 `04-vpn-and-encryption/`
+### 04 VPN & Encryption *(Coming Soon)*
+ `04-vpn-and-encryption/`
 
 Topics planned: IPSec Site-to-Site VPN, GRE Tunnels, SSL VPN
 
 ---
 
-### 05 — Threat Intelligence *(Coming Soon)*
-📁 `05-threat-intelligence/`
+### 05 Threat Intelligence *(Coming Soon)*
+ `05-threat-intelligence/`
 
 Topics planned: CTI lifecycle, MITRE ATT&CK framework, Diamond Model, Kill Chain analysis
 
 ---
 
-## 🖥️ SOC Labs
+## SOC Labs
 
 *These labs focus on security monitoring, detection, analysis, and incident response — the core skills of a Security Operations Center analyst.*
 
 ---
 
-### 06 — SOC Home Lab
-📁 [`06-soc-labs/`](./06-soc-labs/)
+### 06 SOC Home Lab
+ [`06-soc-labs/`](./06-soc-labs/)
 
 **Description:**
-A home lab environment built to simulate real SOC operations including log ingestion, alert triage, threat detection, and incident response using industry-standard open source tools.
+A home lab environment built to simulate real SOC operations, including log ingestion, alert triage, threat detection, and incident response, using industry-standard open-source tools.
 
 > 📸 **[SCREENSHOT: Wazuh dashboard showing active agents and alerts]**
 
@@ -165,7 +165,7 @@ A home lab environment built to simulate real SOC operations including log inges
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 **Networking:**
 
@@ -185,7 +185,7 @@ A home lab environment built to simulate real SOC operations including log inges
 
 ---
 
-## 📜 Certifications & Studies
+## Certifications & Studies
 
 | Certification | Status |
 |---------------|--------|
@@ -195,13 +195,13 @@ A home lab environment built to simulate real SOC operations including log inges
 
 ---
 
-## 📬 Connect With Me
+## Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
 
