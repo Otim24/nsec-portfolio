@@ -8,7 +8,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring a th
 
 ## Topology
 
-> 📸 **[SCREENSHOT: Full Packet Tracer topology all green links visible]**
+![Topology](./image.png)
 
 ### Device Inventory
 
