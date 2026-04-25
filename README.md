@@ -86,14 +86,8 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Verification:**
 
-<img width="656" height="522" alt="image" src="https://github.com/user-attachments/assets/df9da779-f93c-4fcb-a53a-676fd8a21f8c" />
+<img width="1919" height="1047" alt="image" src="https://github.com/user-attachments/assets/710e83cf-18e8-487d-83d6-1c8eb88a6b80" />
 
-
-<img width="684" height="607" alt="image" src="https://github.com/user-attachments/assets/bd7f2399-c428-4017-ac5c-0decee499fa4" />
-
-<img width="674" height="343" alt="image" src="https://github.com/user-attachments/assets/fb212fd7-477d-429f-921b-25520a89aa8d" />
-
-<img width="655" height="522" alt="image" src="https://github.com/user-attachments/assets/639f0ff1-9382-424d-aa26-029acd077323" />
 
 
 **Tools Used:** Cisco Packet Tracer, Cisco IOS CLI, Cisco 2960 Switches, Cisco 2811 Router
