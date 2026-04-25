@@ -7,7 +7,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring a th
 ---
 
 ## Topology
-
+![Topology](./topology.png)
 ### Device Inventory
 
 | Device | Model | Role |
@@ -142,7 +142,7 @@ ip helper-address 192.168.10.254
 > 📸 **[SCREENSHOT: show vtp status — VTP Domain ISBAT, Mode Client]**
 
 ### VLAN Propagation
-> 📸 **[SCREENSHOT: show vlan brief — VLAN 10 IT, VLAN 20 SALES, VLAN 30 HR all active]**
+![VLAN Propagation](./vlan brief.png)
 
 ### Routing Table
 ![Routing Table](./image.png)
