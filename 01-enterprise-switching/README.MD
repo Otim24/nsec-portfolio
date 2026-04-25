@@ -1,4 +1,4 @@
-# 🔧 Lab 01 Enterprise Switching
+# # Enterprise Switching VLANs, Trunking & Inter-VLAN Routing
 
 ## Overview
 
@@ -151,7 +151,7 @@ ip helper-address 192.168.10.254
 ![DHCP Assignment](./dhcp.png)
 
 ### Inter-VLAN Routing
-> 📸 **[SCREENSHOT: Ping from PC0 VLAN 10 to PC in VLAN 30 — successful]**
+![Inter-VLAN Routing](./pingvlan.png)
 
 ### Cross-Router Connectivity
 ![Cross-Router Connectivity](./ping.png)
