@@ -92,6 +92,8 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 ## Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Timothy%20Otim-blue?logo=linkedin)](https://www.linkedin.com/in/timothy-otim-lutara)
+
 
 ---
 
