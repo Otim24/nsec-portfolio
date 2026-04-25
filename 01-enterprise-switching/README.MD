@@ -1,4 +1,4 @@
-# 🔧 Lab 01 — Enterprise Switching
+# 🔧 Lab 01 Enterprise Switching
 
 ## Overview
 
@@ -8,7 +8,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring a th
 
 ## Topology
 
-> 📸 **[SCREENSHOT: Full Packet Tracer topology — all green links visible]**
+> 📸 **[SCREENSHOT: Full Packet Tracer topology all green links visible]**
 
 ### Device Inventory
 
@@ -73,10 +73,10 @@ All switch-to-switch and switch-to-router links configured as trunk ports to car
 Single physical link between Core Switch and Router carries all VLAN traffic using 802.1Q sub-interfaces — one sub-interface per VLAN.
 
 ### 4. DHCP
-Router configured as DHCP server with separate pools for each VLAN. Core Switch uses `ip helper-address` to forward DHCP broadcasts from PCs to the router.
+Router configured as a DHCP server with separate pools for each VLAN. Core Switch uses `ip helper-address` to forward DHCP broadcasts from PCs to the router.
 
 ### 5. Static Server IPs
-Servers assigned static IPs in a dedicated 172.16.0.0/24 network — standard practice for infrastructure devices that must maintain a permanent address.
+Servers are assigned static IPs in a dedicated 172.16.0.0/24 network, which is standard practice for infrastructure devices that must maintain a permanent address.
 
 ---
 
