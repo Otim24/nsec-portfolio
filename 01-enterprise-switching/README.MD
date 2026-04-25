@@ -148,7 +148,7 @@ ip helper-address 192.168.10.254
 ![Routing Table](./image.png)
 
 ### DHCP Assignment
-> 📸 **[SCREENSHOT: PC Desktop showing DHCP assigned IP in correct subnet]**
+![DHCP Assignment](./dhcp.png)
 
 ### Inter-VLAN Routing
 > 📸 **[SCREENSHOT: Ping from PC0 VLAN 10 to PC in VLAN 30 — successful]**
