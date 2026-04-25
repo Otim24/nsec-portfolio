@@ -86,7 +86,8 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Verification:**
 
-> 📸 **[SCREENSHOT: show vlan brief output showing VLAN 10 IT, VLAN 20 SALES, VLAN 30 HR all active]**
+<img width="656" height="522" alt="image" src="https://github.com/user-attachments/assets/df9da779-f93c-4fcb-a53a-676fd8a21f8c" />
+
 
 > 📸 **[SCREENSHOT: Successful ping from PC0 (VLAN 10) to PC in VLAN 30 proving inter-VLAN routing]**
 
