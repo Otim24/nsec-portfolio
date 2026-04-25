@@ -1,58 +1,64 @@
-#  Network Security Engineering Portfolio
+# 🛡️ Network Security Engineering Portfolio
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Focus](https://img.shields.io/badge/Focus-Network%20Security-blue)
+![Focus](https://img.shields.io/badge/Focus-Network%20Security%20%26%20SOC-blue)
 ![Path](https://img.shields.io/badge/Path-CCNP%20Security-orange)
 ![Tools](https://img.shields.io/badge/Tools-Cisco%20Packet%20Tracer%20%7C%20Wazuh%20%7C%20Suricata-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
-##  About Me
+## 👤 About Me
 
-I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security engineering building toward **CCNP Security** and a career in network security.
+I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security operations — building toward **CCNP Security** and a career at the intersection of network security and SOC engineering.
 
 I believe in learning by doing. Every lab here represents a real concept I've configured, broken, debugged, and understood from the ground up.
 
+> *"I'm currently exploring both Network Security Engineering and Security Operations — building practical skills across enterprise networking, SIEM, IDS/IPS, and threat intelligence, because the best security engineers understand both sides."*
+
 ---
 
-##  Goals
+## 🎯 Goals
 
 - Master enterprise networking fundamentals (VLANs, routing, switching)
 - Build practical network security skills (firewalls, IDS/IPS, VPNs)
+- Develop SOC skills (SIEM, log analysis, incident response, threat hunting)
 - Earn the **CCNP Security** certification
 - Contribute to cybersecurity in the East African technology landscape
 
 ---
 
-##  Repository Structure
+## 📂 Repository Structure
 
 ```
 nsec-portfolio/
 │
 ├── 01-enterprise-switching/       # VLANs, Trunking, VTP, Inter-VLAN Routing
-├── 02-network-security/           # Firewalls, ACLs, Security Policies
-├── 03-ids-ips/                    # Suricata, Wazuh, pfSense
+├── 02-network-security/           # Firewalls, ACLs, Port Security
+├── 03-ids-ips/                    # Suricata, pfSense
 ├── 04-vpn-and-encryption/         # Site-to-Site VPN, SSL VPN
 ├── 05-threat-intelligence/        # CTI frameworks, MITRE ATT&CK, Kill Chain
+├── 06-soc-labs/                   # SIEM, Wazuh, Log Analysis, Incident Response
 └── README.md
 ```
 
 ---
 
-##  Labs & Projects
+## 🌐 Network Security Labs
+
+*These labs focus on building, securing, and managing enterprise network infrastructure.*
 
 ---
 
 ### 01 — Enterprise Switching
- [`01-enterprise-switching/`](./01-enterprise-switching/)
+📁 [`01-enterprise-switching/`](./01-enterprise-switching/)
 
 **Description:**
 A full enterprise switching topology built in Cisco Packet Tracer featuring hierarchical network design with Core, Distribution, and Access layers. Includes three segmented VLANs, dynamic DHCP assignment, and inter-VLAN routing through a dedicated router.
 
 **Topology Overview:**
 
->  <img width="1557" height="592" alt="image" src="https://github.com/user-attachments/assets/4763ab9d-2722-4947-8710-b3a68c312a60" />
+> <img width="1557" height="592" alt="image" src="https://github.com/user-attachments/assets/4763ab9d-2722-4947-8710-b3a68c312a60" />
 
 **VLAN Design:**
 
@@ -72,7 +78,7 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 
 **Key Concepts Covered:**
 - IEEE 802.1Q Trunking across hierarchical switch layers
-- VLAN Trunking Protocol (VTP)  Server/Client/Transparent modes
+- VLAN Trunking Protocol (VTP) — Server/Client/Transparent modes
 - Router on a Stick (inter-VLAN routing via sub-interfaces)
 - DHCP pools per VLAN with ip helper-address forwarding
 - Spanning Tree Protocol (STP) PortFast configuration
@@ -91,51 +97,111 @@ A full enterprise switching topology built in Cisco Packet Tracer featuring hier
 ---
 
 ### 02 — Network Security *(Coming Soon)*
- `02-network-security/`
+📁 `02-network-security/`
 
 Topics planned: ACLs, Zone-Based Firewalls, Security Policies, Port Security
 
 ---
 
 ### 03 — IDS/IPS *(Coming Soon)*
- `03-ids-ips/`
+📁 `03-ids-ips/`
 
-Topics planned: Suricata on pfSense, Wazuh SIEM, custom rule writing, alert analysis
+Topics planned: Suricata on pfSense, custom rule writing, alert analysis
 
 ---
 
 ### 04 — VPN & Encryption *(Coming Soon)*
- `04-vpn-and-encryption/`
+📁 `04-vpn-and-encryption/`
 
 Topics planned: IPSec Site-to-Site VPN, GRE Tunnels, SSL VPN
 
 ---
 
 ### 05 — Threat Intelligence *(Coming Soon)*
- `05-threat-intelligence/`
+📁 `05-threat-intelligence/`
 
 Topics planned: CTI lifecycle, MITRE ATT&CK framework, Diamond Model, Kill Chain analysis
 
 ---
 
-##  Tools & Technologies
+## 🖥️ SOC Labs
+
+*These labs focus on security monitoring, detection, analysis, and incident response — the core skills of a Security Operations Center analyst.*
+
+---
+
+### 06 — SOC Home Lab
+📁 [`06-soc-labs/`](./06-soc-labs/)
+
+**Description:**
+A home lab environment built to simulate real SOC operations including log ingestion, alert triage, threat detection, and incident response using industry-standard open source tools.
+
+> 📸 **[SCREENSHOT: Wazuh dashboard showing active agents and alerts]**
+
+**Key Concepts Covered:**
+- SIEM deployment and configuration (Wazuh)
+- Log collection and analysis from multiple sources
+- IDS alert analysis and tuning (Suricata)
+- Threat detection using MITRE ATT&CK mapping
+- Incident response workflows
+
+> 📸 **[SCREENSHOT: Suricata alert output or Wazuh rule triggered]**
+
+> 📸 **[SCREENSHOT: Log analysis showing detected event with explanation]**
+
+**Tools Used:** Wazuh, Suricata, pfSense, Linux
+
+---
+
+### SOC Concepts Studied
+
+| Topic | Framework / Tool |
+|-------|-----------------|
+| Threat Intelligence | MITRE ATT&CK, Kill Chain, Diamond Model |
+| Log Analysis | Wazuh SIEM |
+| Network Detection | Suricata IDS/IPS |
+| Incident Response | NIST CSF |
+| Vulnerability Management | OpenCTI |
+
+---
+
+## 🛠️ Tools & Technologies
+
+**Networking:**
 
 ![Cisco](https://img.shields.io/badge/Cisco-IOS-1BA0D7?logo=cisco)
 ![Packet Tracer](https://img.shields.io/badge/Cisco-Packet%20Tracer-1BA0D7)
+![pfSense](https://img.shields.io/badge/Firewall-pfSense-darkblue)
+
+**Security Operations:**
+
 ![Wazuh](https://img.shields.io/badge/SIEM-Wazuh-blue)
 ![Suricata](https://img.shields.io/badge/IDS-Suricata-orange)
-![pfSense](https://img.shields.io/badge/Firewall-pfSense-darkblue)
+![MITRE](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red)
+
+**Systems:**
+
 ![Linux](https://img.shields.io/badge/OS-Linux-black?logo=linux)
 
 ---
 
-## Connect With Me
+## 📜 Certifications & Studies
+
+| Certification | Status |
+|---------------|--------|
+| ISC2 Certified in Cybersecurity (CC) | In Progress |
+| Cisco CCNA | Studying |
+| Cisco CCNP Security | Target |
+
+---
+
+## 📬 Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
 
 ---
 
-##  License
+## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
 
