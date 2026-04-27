@@ -1,4 +1,4 @@
-# SOC Home Lab — Attack Detection & Log Analysis
+# SOC Home Lab Attack Detection & Log Analysis
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Tools](https://img.shields.io/badge/Tools-Wazuh%20%7C%20Splunk%20%7C%20pfSense%20%7C%20Kali-blue)
@@ -12,7 +12,7 @@
 
 This lab simulates a real-world Security Operations Centre (SOC) environment built entirely on VMware Workstation. The goal is to practice the full SOC workflow: build the infrastructure, monitor it with industry-standard tools, attack it from a dedicated attacker machine, and detect those attacks through log analysis and SIEM correlation.
 
-The lab demonstrates a complete attack lifecycle — from initial reconnaissance and brute force through to successful credential theft — and shows how each stage leaves forensic evidence that a SOC analyst can detect and investigate.
+The lab demonstrates a complete attack lifecycle from initial reconnaissance and brute force through to successful credential theft and shows how each stage leaves forensic evidence that a SOC analyst can detect and investigate.
 
 **The lab covers:**
 - Network segmentation and firewall configuration with pfSense
@@ -21,7 +21,7 @@ The lab demonstrates a complete attack lifecycle — from initial reconnaissance
 - Offensive techniques using Kali Linux (Nmap, netexec)
 - Detection engineering and threat hunting with SPL (Splunk Processing Language)
 - Post-exploitation credential dumping (MITRE ATT&CK T1003.001)
-- Failure vs. success event correlation — the "Smoke" vs. the "Fire"
+- Failure vs. success event correlation — the "Smoke" vs. the "Fire."
 
 ---
 
@@ -142,7 +142,7 @@ Analyst searches on Kali (http://10.0.2.10:8000)
 
 ---
 
-## Phase 1 — Infrastructure Setup
+## Phase 1 Infrastructure Setup
 
 ### 1.1 Wazuh Installation on Ubuntu
 
@@ -225,7 +225,7 @@ index=main | stats count by sourcetype
 
 ---
 
-## Phase 2 — Reconnaissance & Attack Simulation
+## Phase 2 Reconnaissance & Attack Simulation
 
 ### 2.1 Nmap Port Scan — Windows Client
 
@@ -244,7 +244,7 @@ PORT     STATE  SERVICE        VERSION
 OS: Microsoft Windows 10 Enterprise
 ```
 
-### 2.2 Nmap Port Scan — Windows Server (Domain Controller)
+### 2.2 Nmap Port Scan Windows Server (Domain Controller)
 
 **Target:** Windows Server (`10.0.3.2`)
 
@@ -268,11 +268,11 @@ OS: Windows Server 2019 | Domain: soc.local
 ![Nmap Scan Windows Server](screenshots/nmap-scan-winserver.png)
 *Nmap aggressive scan identifying Windows Server 2019 as a Domain Controller*
 
-> **SOC Note:** Ports 88 (Kerberos), 389 (LDAP), and 3268 (Global Catalog) immediately identify this machine as an Active Directory Domain Controller — a high-value target. An attacker knowing this will pivot to Kerberos attacks, LDAP enumeration, and credential dumping.
+> **SOC Note:** Ports 88 (Kerberos), 389 (LDAP), and 3268 (Global Catalog) immediately identify this machine as an Active Directory Domain Controller a high-value target. An attacker knowing this will pivot to Kerberos attacks, LDAP enumeration, and credential dumping.
 
-### 2.3 SMB Brute Force Attack — Windows Server
+### 2.3 SMB Brute Force Attack Windows Server
 
-**MITRE ATT&CK:** T1110.001 — Brute Force: Password Guessing  
+**MITRE ATT&CK:** T1110.001 Brute Force: Password Guessing  
 **Tool:** netexec (successor to CrackMapExec)  
 **Target:** `Administrator` account on `10.0.3.2`
 
@@ -280,7 +280,7 @@ OS: Windows Server 2019 | Domain: soc.local
 netexec smb 10.0.3.2 -u Administrator -p /usr/share/wordlists/rockyou.txt --ignore-pw-decoding
 ```
 
-netexec connected over SMB port 445 and systematically tested 14,344,399 passwords from the rockyou wordlist, generating a high-volume stream of authentication failures — each one becoming a `EventCode 4625` on the target machine.
+netexec connected over SMB port 445 and systematically tested 14,344,399 passwords from the rockyou wordlist, generating a high-volume stream of authentication failures each one becoming a `EventCode 4625` on the target machine.
 
 ![SMB Brute Force Attack](screenshots/smb-brute-attack.png)
 *netexec running SMB brute force — STATUS_LOGON_FAILURE on each attempt, ending with Pwn3d!*
@@ -304,7 +304,7 @@ Each `[-]` line = one `EventCode 4625` logged on the server. The `[+] (Pwn3d!)` 
 
 | Event ID | Category | Description | SOC Relevance |
 |----------|----------|-------------|---------------|
-| 4624 | Authentication | Successful logon | Baseline — monitor for unusual times/sources |
+| 4624 | Authentication | Successful logon | Baseline monitor for unusual times/sources |
 | 4625 | Authentication | Failed logon | Brute force indicator |
 | 4634 | Authentication | Account logoff | Session tracking |
 | 4648 | Authentication | Logon with explicit credentials | Pass-the-Hash indicator |
@@ -344,11 +344,11 @@ index=main sourcetype=WinEventLog:Security EventCode=4625
 
 | Account Name | Failed Attempts | Analysis |
 |-------------|----------------|----------|
-| Administrator | 8,529 | 🚨 CRITICAL — Automated brute force confirmed |
-| - (blank) | 269 | Service authentication failures — background noise |
-| WINSERVER$ | 17 | Machine account — normal AD traffic |
+| Administrator | 8,529 | RITICAL Automated brute force confirmed |
+| - (blank) | 269 | Service authentication failures background noise |
+| WINSERVER$ | 17 | Machine account normal AD traffic |
 | WIN-1QNER218B3J | 4 | Machine account authentication |
-| SOC | 3 | Local account — manual errors |
+| SOC | 3 | Local account manual errors |
 
 ### 3.4 Real-Time Brute Force Detection
 
@@ -379,20 +379,20 @@ Source Network Address: 10.0.1.10
 
 | Indicator | Value | Meaning |
 |-----------|-------|---------|
-| **Logon Type** | 3 | Network logon via SMB — confirms remote attack |
-| **Sub Status** | 0xC000006A | Correct username, wrong password — brute force fingerprint |
+| **Logon Type** | 3 | Network logon via SMB confirms remote attack |
+| **Sub Status** | 0xC000006A | Correct username, wrong password brute force fingerprint |
 | **Status** | 0xC000006D | Authentication failure |
-| **Source IP** | 10.0.1.10 | Kali Linux — the attacker |
+| **Source IP** | 10.0.1.10 | Kali Linux the attacker |
 | **Volume** | 8,529 in one window | Confirms automated tool, not a human |
 
 **Distinguishing Noise from Real Attacks:**
 
 Earlier in the lab, 279 failed logins appeared on Administrator before any attack was launched. Those events showed:
-- **Logon Type 7** (screen unlock) — not Type 3 (network)
-- **Source: 127.0.0.1** (localhost) — not an external IP
+- **Logon Type 7** (screen unlock) not Type 3 (network)
+- **Source: 127.0.0.1** (localhost) not an external IP
 - **svchost.exe** — a Windows service, not an attack tool
 
-This is a critical SOC skill — two events can have the same Event ID but mean completely different things depending on Logon Type and Source IP.
+This is a critical SOC skill two events can have the same Event ID but mean completely different things depending on Logon Type and Source IP.
 
 ### 3.5 Visualizing Attack Volume
 
@@ -408,7 +408,7 @@ index=main sourcetype=WinEventLog:Security EventCode=4625 Account_Name=Administr
 
 ### 3.6 Detecting the Successful Breach — EventCode 4624
 
-After the brute force succeeded, a single `EventCode 4624` appeared amid thousands of failures. This is the most critical event — it marks confirmed compromise.
+After the brute force succeeded, a single `EventCode 4624` appeared amid thousands of failures. This is the most critical event it marks confirmed compromise.
 
 ```splunk
 index=main sourcetype=WinEventLog:Security EventCode=4624 Account_Name=Administrator
@@ -428,9 +428,9 @@ Elevated Token: Yes
 Source IP:      10.0.1.10  ← Kali Linux
 ```
 
-Every field confirms the breach — Logon Type 3 (SMB), Elevated Token (full admin), Source IP matching Kali, timing immediately after the 4625 spike.
+Every field confirms the breach Logon Type 3 (SMB), Elevated Token (full admin), Source IP matching Kali, timing immediately after the 4625 spike.
 
-### 3.7 Failure vs. Success — The Complete Attack Picture
+### 3.7 Failure vs. Success, The Complete Attack Picture
 
 | Detail | Failed Attempt (The Smoke) | Successful Breach (The Fire) |
 |--------|---------------------------|------------------------------|
@@ -443,11 +443,11 @@ Every field confirms the breach — Logon Type 3 (SMB), Elevated Token (full adm
 
 ---
 
-## Phase 4 — Post-Exploitation: Credential Dumping
+## Phase 4 Post-Exploitation: Credential Dumping
 
 ### 4.1 LSA Secrets Dump
 
-**MITRE ATT&CK:** T1003.001 — OS Credential Dumping: LSASS Memory
+**MITRE ATT&CK:** T1003.001 OS Credential Dumping: LSASS Memory
 
 Once valid credentials were obtained, the attacker moved to post-exploitation — extracting credential material from the server's memory without ever touching the disk.
 
@@ -495,7 +495,7 @@ index=main sourcetype=WinEventLog:Security EventCode=4672 Account_Name=Administr
 | table _time, Account_Name, Privilege_List
 ```
 
-`EventCode 4672` fires when special privileges are assigned — including `SeDebugPrivilege`, which is required to access LSASS process memory. Finding 4624 + 4672 together from an unusual source IP is the detection signal for credential dumping.
+`EventCode 4672` fires when special privileges are assigned including `SeDebugPrivilege`, which is required to access LSASS process memory. Finding 4624 + 4672 together from an unusual source IP is the detection signal for credential dumping.
 
 ---
 
@@ -529,7 +529,7 @@ Wazuh provides real-time endpoint detection independent of Splunk. With both age
       │       Source IP: 10.0.1.10
       │
       └─ 4. netexec smb --lsa ──────────────── Credential Dumping T1003.001
-              6 LSA secrets extracted         (4624 + 4672 — hunt with SPL)
+              6 LSA secrets extracted         (4624 + 4672 hunt with SPL)
               AES keys, NTLM hashes, DPAPI
 ```
 
