@@ -1,4 +1,4 @@
-#  Enterprise Network Lab — EVE-NG
+#  Enterprise Network Lab EVE-NG
 
 **Author:** Timothy Lutara  
 **Focus:** Network Engineering | Enterprise Switching & Routing | Firewall Integration  
