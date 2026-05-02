@@ -40,7 +40,7 @@ nsec-portfolio/
 
 ---
 
-### ✅ Lab 01 — Enterprise Switching (Cisco Packet Tracer)
+### ✅ Lab 01 Enterprise Switching (Cisco Packet Tracer)
 
 **Platform:** Cisco Packet Tracer  
 **Focus:** Layer 2 Switching | VLAN Design | Inter-VLAN Routing
@@ -59,7 +59,7 @@ This was my first enterprise switching lab, covering the full Layer 2 to Layer 3
 
 ---
 
-### ✅ Lab 02 — EVE-NG Enterprise Network Lab
+### ✅ Lab 02 EVE-NG Enterprise Network Lab
 
 **Platform:** EVE-NG on VMware Workstation  
 **Focus:** Enterprise Network Engineering | Routing & Switching | Firewall Integration
@@ -92,7 +92,7 @@ A full multi-floor enterprise office network built and verified end-to-end in EV
 
 ---
 
-### ✅ Lab 03 SOC Home Lab
+### ✅ Lab 06 SOC Home Lab
 
 **Platform:** VMware Workstation  
 **Focus:** Security Operations | SIEM | IDS/IPS | Threat Detection
