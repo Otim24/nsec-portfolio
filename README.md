@@ -3,7 +3,6 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Focus](https://img.shields.io/badge/Focus-Network%20Security%20%26%20SOC-blue)
 ![Path](https://img.shields.io/badge/Path-CCNP%20Security-orange)
-![Tools](https://img.shields.io/badge/Tools-EVE--NG%20%7C%20Cisco%20IOS%20%7C%20FortiGate%20%7C%20Splunk%20%7C%20Suricata-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
@@ -18,32 +17,22 @@ I learn by doing. Every lab here represents a real concept I've configured, brok
 
 ---
 
-## 🎯 Goals
-
-- Master enterprise networking fundamentals (VLANs, routing, switching, firewall integration)
-- Build practical network security skills (FortiGate, ACLs, IDS/IPS, VPNs)
-- Develop SOC analyst skills (Splunk SIEM, log analysis, incident response, threat hunting)
-- Earn **CCNP Security** certification (Roadmap: ISC2 CC → CySA+ → CCNA → CCNP Security)
-- Contribute to cybersecurity in the East African technology landscape
-
----
-
 ## 🗂️ Repository Structure
 
 ```
 nsec-portfolio/
 │
-├── 01-enterprise-switching/          ✅ Complete
+├── 01-enterprise-switching/           
 │   └── Packet Tracer — VLANs, Trunking, VTP, Router-on-a-Stick, DHCP
 │
-├── 02-eve-ng-enterprise-network/     ✅ Complete
+├── 02-eve-ng-enterprise-network/      
 │   └── EVE-NG — Full enterprise topology, OSPF, FortiGate, inter-VLAN routing, internet NAT
 │
-└── 03-soc-lab/                       ✅ Complete
+└── 03-soc-lab/                        
     └── VMware — pfSense, Splunk, Suricata, Windows Server AD, Kali Linux
 ```
 
-> **Note:** Additional labs are in active development — see the roadmap section below.
+> Additional labs are in active development.
 
 ---
 
@@ -120,45 +109,6 @@ A full SOC analyst lab environment built on VMware Workstation with a virtualize
 - **Suricata** — Network IDS/IPS for traffic inspection and alerting
 
 📁 [View Lab →](./03-soc-lab/)
-
----
-
-## 🗺️ Roadmap — Labs in Development
-
-| Lab | Focus | Status |
-|---|---|---|
-| Lab 04 — Network Attack & Defense | VLAN hopping, ARP spoofing, lateral movement + hardening | 🔄 Planned |
-| Lab 05 — FortiGate Deep Dive | IPS policies, application control, SSL inspection, VPN | 🔄 Planned |
-| Lab 06 — SOC Attack Scenarios | Attack simulations detected in Splunk/Suricata | 🔄 Planned |
-| Lab 07 — Vulnerability Assessment Report | Professional VA report on Lab 04 findings | 🔄 Planned |
-
----
-
-## 🎓 Certifications & Education
-
-| Credential | Institution | Year |
-|---|---|---|
-| BSc Information Technology (Cybersecurity) — In Progress | ISBAT University, Kampala | 2027 (Expected) |
-| Diploma in Cybersecurity | ISBAT University | 2024 |
-| Professional Certificate in Software Engineering | — | 2022 |
-| ISC2 Certified in Cybersecurity (CC) — Scheduled | ISC2 / Pearson VUE | 2026 |
-
-**Certification Roadmap:** ISC2 CC → CompTIA CySA+ → Cisco CCNA → Cisco CCNP Security
-
----
-
-## 🛠️ Tools & Technologies
-
-| Category | Tools |
-|---|---|
-| Network Emulation | EVE-NG, Cisco Packet Tracer, GNS3 |
-| Routing & Switching | Cisco IOS (IOU/vIOS-L2), OSPF, VLANs, STP, VTP |
-| Firewalls | FortiGate VM, pfSense |
-| SIEM | Splunk |
-| IDS/IPS | Suricata |
-| Operating Systems | Windows Server 2019, Ubuntu Server, Kali Linux |
-| Virtualization | VMware Workstation |
-| Scripting | Python, Bash |
 
 ---
 
