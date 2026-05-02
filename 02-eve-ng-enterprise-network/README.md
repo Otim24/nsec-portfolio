@@ -197,6 +197,7 @@ The topology mirrors what you would find in a real small-to-medium enterprise en
 *VPC on VLAN 10 pinging VPC on VLAN 20 — inter-VLAN routing confirmed*
 
 ![VPC Ping Internet](screenshots/vpc-ping-internet.png)
+
 *VPC pinging 8.8.8.8 — full end-to-end internet connectivity through FortiGate confirmed*
 
 ---
@@ -289,7 +290,7 @@ end
 ## 👤 Author
 
 **Timothy Lutara**  
-BSc Information Technology (Cybersecurity) — ISBAT University, Kampala  
+BSc Information Technology (Cybersecurity) ISBAT University, Kampala  
 Targeting: Network Security Engineer | CCNP Security | NSE Certification Path  
 
-[GitHub](https://github.com/your-github-username) | [LinkedIn](https://linkedin.com/in/your-linkedin)
+[GitHub](https://github.com/your-github-username) | [LinkedIn](www.linkedin.com/in/timothy-otim-lutara)
