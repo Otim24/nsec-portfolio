@@ -9,11 +9,11 @@
 
 ## 👤 About Me
 
-I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security operations — building toward **CCNP Security** and a career at the intersection of network engineering and security operations.
+I'm **Timothy Otim Lutara**, a cybersecurity student and aspiring Network Security Engineer based in Kampala, Uganda. This repository documents my hands-on journey through enterprise networking, network security, and security operations, building toward **CCNP Security** and a career at the intersection of network engineering and security operations.
 
-I learn by doing. Every lab here represents a real concept I've configured, broken, debugged, and understood from the ground up — not a tutorial I followed passively.
+I learn by doing. Every lab here represents a real concept I've configured, broken, debugged, and understood from the ground up, not a tutorial I followed passively.
 
-> *"I'm building practical skills across enterprise networking, firewall administration, SIEM, IDS/IPS, and threat intelligence — because the best network security engineers understand both how networks are built and how they are attacked."*
+> *"I'm building practical skills across enterprise networking, firewall administration, SIEM, IDS/IPS, and threat intelligence because the best network security engineers understand both how networks are built and how they are attacked."*
 
 ---
 
@@ -23,13 +23,13 @@ I learn by doing. Every lab here represents a real concept I've configured, brok
 nsec-portfolio/
 │
 ├── 01-enterprise-switching/           
-│   └── Packet Tracer — VLANs, Trunking, VTP, Router-on-a-Stick, DHCP
+│   └── Packet Tracer VLANs, Trunking, VTP, Router-on-a-Stick, DHCP
 │
 ├── 02-eve-ng-enterprise-network/      
-│   └── EVE-NG — Full enterprise topology, OSPF, FortiGate, inter-VLAN routing, internet NAT
+│   └── EVE-NG Full enterprise topology, OSPF, FortiGate, inter-VLAN routing, internet NAT
 │
 └── 03-soc-lab/                        
-    └── VMware — pfSense, Splunk, Suricata, Windows Server AD, Kali Linux
+    └── VMware pfSense, Splunk, Suricata, Windows Server AD, Kali Linux
 ```
 
 > Additional labs are in active development.
@@ -64,7 +64,7 @@ This was my first enterprise switching lab, covering the full Layer 2 to Layer 3
 **Platform:** EVE-NG on VMware Workstation  
 **Focus:** Enterprise Network Engineering | Routing & Switching | Firewall Integration
 
-A full multi-floor enterprise office network built and verified end-to-end in EVE-NG. This lab goes significantly beyond basic switching — implementing a complete network stack from access layer VPCs through to internet connectivity via a FortiGate next-generation firewall.
+A full multi-floor enterprise office network built and verified end-to-end in EVE-NG. This lab goes significantly beyond basic switching implementing a complete network stack from access layer VPCs through to internet connectivity via a FortiGate next-generation firewall.
 
 **Topology:** 4 access switches → Layer 3 core switch → edge router → FortiGate firewall → internet
 
@@ -100,13 +100,13 @@ A full multi-floor enterprise office network built and verified end-to-end in EV
 A full SOC analyst lab environment built on VMware Workstation with a virtualized enterprise network including Active Directory, endpoint monitoring, network intrusion detection, and centralized log analysis via Splunk.
 
 **Lab Environment (~95GB):**
-- **pfSense** — Perimeter firewall and network gateway
-- **Ubuntu Server** — Linux server for services and log forwarding
-- **Windows Server 2019** — Active Directory Domain Controller
-- **Windows 10 Client** — Domain-joined endpoint
-- **Kali Linux** — Attacker machine for simulated attack scenarios
-- **Splunk** — SIEM for log ingestion, dashboards, and alerting
-- **Suricata** — Network IDS/IPS for traffic inspection and alerting
+- **pfSense** Perimeter firewall and network gateway
+- **Ubuntu Server** Linux server for services and log forwarding
+- **Windows Server 2019** Active Directory Domain Controller
+- **Windows 10 Client** Domain-joined endpoint
+- **Kali Linux** Attacker machine for simulated attack scenarios
+- **Splunk** SIEM for log ingestion, dashboards, and alerting
+- **Suricata** Network IDS/IPS for traffic inspection and alerting
 
 📁 [View Lab →](./03-soc-lab/)
 
