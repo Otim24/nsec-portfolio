@@ -111,6 +111,7 @@ The topology mirrors what you would find in a real small-to-medium enterprise en
 
 ### Topology
 ![EVE-NG Topology](screenshots/topology-overview.png)
+
 *Full EVE-NG topology showing all devices and connections*
 
 ---
