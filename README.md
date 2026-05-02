@@ -88,7 +88,7 @@ A full multi-floor enterprise office network built and verified end-to-end in EV
 ![Ping 8.8.8.8](./02-eve-ng-enterprise-network/screenshots/vpc-ping-internet.png)
 
 📁 [View Lab →](./02-eve-ng-enterprise-network/)  
-📄 [Read Full Report →](./02-eve-ng-enterprise-network/Enterprise-Network-Lab-Report.docx)
+📄 [Read Full Report →](./02-eve-ng-enterprise-network/Enterprise-Network-Lab-Report.pdf)
 
 ---
 
