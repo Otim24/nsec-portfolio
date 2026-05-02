@@ -118,66 +118,82 @@ The topology mirrors what you would find in a real small-to-medium enterprise en
 
 ### VLAN Configuration
 ![VLAN Brief - Core Switch](screenshots/core-vlan-brief.png)
+
 *VLANs 10, 20, 30, 40 created on core switch with correct names*
 
 ![VTP Status - Access Switch](screenshots/access-vtp-status.png)
+
 *VTP client mode confirmed on access switch with matching domain and revision number*
 
 ![VLAN Brief - Access Switch](screenshots/access-vlan-brief.png)
+
 *Access switch showing VPC ports correctly assigned to VLAN 40 (IT floor)*
 
 ---
 
 ### Trunking
 ![Show Interfaces Trunk - Core](screenshots/core-trunk-output.png)
+
 *All four downlink ports trunking with 802.1Q, VLANs 10/20/30/40 active and forwarding*
 
 ---
 
 ### Layer 3 & Routing
 ![Show IP Interface Brief - Core](screenshots/core-ip-interface-brief.png)
+
 *All four SVIs up/up with correct gateway IPs, Gi0/1 routed port active*
 
 ![Show IP Route - Core](screenshots/core-ip-route.png)
+
 *Core switch routing table showing connected VLAN routes and OSPF default route learned from router*
 
 ![OSPF Neighbor - Router](screenshots/router-ospf-neighbor.png)
+
 *OSPF neighbor relationship FULL state between router and core switch*
 
 ![Show IP Route - Router](screenshots/router-ip-route.png)
+
 *Router routing table showing OSPF-learned VLAN routes and static default route toward FortiGate*
 
 ---
 
 ### DHCP
 ![DHCP Pools - Router](screenshots/router-dhcp-pools.png)
+
 *All four DHCP pools configured with correct networks, gateways, and DNS*
 
 ![DHCP Helper Address](screenshots/core-helper-address.png)
+
 *ip helper-address configured on all four SVIs pointing to router*
 
 ![VPC DHCP Success](screenshots/vpc-dhcp-success.png)
+
 *VPC successfully obtaining IP address via DHCP from router*
 
 ---
 
 ### FortiGate Firewall
 ![FortiGate Interface Config](screenshots/fortigate-interfaces.png)
+
 *port1 (LAN) static IP 192.168.200.2/30, port2 (WAN) DHCP from internet*
 
 ![FortiGate Static Routes](screenshots/fortigate-static-routes.png)
+
 *Default route out port2, return route toward LAN subnets via router*
 
 ![FortiGate Firewall Policy](screenshots/fortigate-policy.png)
+
 *LAN-to-WAN allow policy with NAT enabled*
 
 ---
 
 ### Connectivity Verification
 ![VPC Ping Gateway](screenshots/vpc-ping-gateway.png)
+
 *VPC pinging its default gateway (Core switch SVI)*
 
 ![VPC Ping Inter-VLAN](screenshots/vpc-ping-intervlan.png)
+
 *VPC on VLAN 10 pinging VPC on VLAN 20 — inter-VLAN routing confirmed*
 
 ![VPC Ping Internet](screenshots/vpc-ping-internet.png)
