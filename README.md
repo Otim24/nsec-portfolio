@@ -92,7 +92,7 @@ A full multi-floor enterprise office network built and verified end-to-end in EV
 
 ---
 
-### ✅ Lab 03 — SOC Home Lab
+### ✅ Lab 03 SOC Home Lab
 
 **Platform:** VMware Workstation  
 **Focus:** Security Operations | SIEM | IDS/IPS | Threat Detection
@@ -108,7 +108,7 @@ A full SOC analyst lab environment built on VMware Workstation with a virtualize
 - **Splunk** SIEM for log ingestion, dashboards, and alerting
 - **Suricata** Network IDS/IPS for traffic inspection and alerting
 
-📁 [View Lab →](./03-soc-lab/)
+📁 [View Lab →](./06-soc-labs/)
 
 ---
 
