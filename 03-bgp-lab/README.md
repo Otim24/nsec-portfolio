@@ -103,7 +103,7 @@ When a border router learns routes via eBGP and passes them to iBGP peers, it ad
 
 ## Configuration Step by Step
 
-### Step 1 — Physical Interface IPs
+### Step 1 Physical Interface IPs
 
 Every point-to-point link gets its own subnet. Lower router number = .1, higher = .2. `no shutdown` required on all physical interfaces.
 
@@ -117,7 +117,7 @@ interface ethernet0/0
  no shutdown
 ```
 
-### Step 2 — Loopback Interfaces
+### Step 2 Loopback Interfaces
 
 Loopbacks come up automatically no shutdown needed.
 
@@ -141,7 +141,7 @@ router ospf 1
  network 192.168.89.0 0.0.0.255 area 0
 ```
 
-### Step 4 — BGP Configuration
+### Step 4 BGP Configuration
 
 Border routers get both iBGP and eBGP neighbors. Internal routers get only iBGP neighbors. Every router advertises its own loopback into BGP.
 
@@ -221,7 +221,7 @@ ping 192.168.XX.X                    ! Test direct link before OSPF/BGP
 ## Lessons Learned
 
 - OSPF must be fully converged before iBGP sessions can form always verify `show ip ospf neighbor` shows FULL before touching BGP
-- Interface IPs assigned to the wrong physical port are one of the most common and hardest to spot issues always verify with `show ip interface brief` and ping across each link before moving to upper layers
+- Interface IPs assigned to the wrong physical port are one of the most common and hardest to spot issues. Always verify with `show ip interface brief` and ping across each link before moving to upper layers
 - iBGP uses loopbacks + `update-source loopback0`, forgetting update-source is the most common reason iBGP sessions stay Idle
 - `next-hop-self` is required on every border router; without it, internal routers have no route to external next-hops and all inter-AS traffic fails silently
 - BGP sessions being established do not automatically mean traffic flows always verify with an actual end-to-end ping using `source loopback0`
