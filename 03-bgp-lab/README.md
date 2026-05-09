@@ -84,13 +84,13 @@ Each router has a loopback interface using its router number as all four octets.
 
 ## Concepts Covered
 
-### 1. BGP — Border Gateway Protocol
+### 1. BGP Border Gateway Protocol
 BGP is the routing protocol that connects different organizations' networks (Autonomous Systems) on the internet. Unlike IGPs which optimize for speed within a network, BGP optimizes for policy and path selection between networks.
 
-### 2. eBGP — External BGP
+### 2. eBGP External BGP
 Sessions between routers in **different** Autonomous Systems. Uses the directly connected interface IP as the neighbor address. No additional source configuration needed because the two routers share a physical link.
 
-### 3. iBGP — Internal BGP
+### 3. iBGP Internal BGP
 Sessions between routers in the **same** Autonomous System. Uses loopback addresses as neighbor addresses for stability. Requires `update-source loopback0` so the router uses its loopback as the BGP session source. Requires a full mesh every router in the AS must peer with every other router in the AS.
 
 ### 4. IGP (OSPF) as the Foundation for iBGP
