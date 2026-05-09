@@ -98,7 +98,7 @@ A full multi-floor enterprise office network built and verified end-to-end in EV
 
 ---
 
-### ✅ Lab 03 — Basic BGP Lab (EVE-NG)
+### Lab 03, Basic BGP Lab (EVE-NG)
 
 **Platform:** EVE-NG  
 **Focus:** Border Gateway Protocol | Multi-AS Routing | iBGP | eBGP | next-hop-self
