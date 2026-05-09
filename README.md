@@ -1,5 +1,9 @@
 # Network Security Engineering Portfolio
 
+<p align="center">
+  <img src="./assets/profile.jpg" alt="Timothy Otim Lutara" width="150" style="border-radius: 50%"/>
+</p>
+
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Focus](https://img.shields.io/badge/Focus-Network%20Security%20%26%20SOC-blue)
 ![Path](https://img.shields.io/badge/Path-CCNP%20Security-orange)
