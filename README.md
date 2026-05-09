@@ -1,8 +1,10 @@
 # Network Security Engineering Portfolio
 
-<p align="center">
-  <img src="./assets/profile.jpg" alt="Timothy Otim Lutara" width="150" style="border-radius: 50%"/>
-</p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+
+# Network Security Engineering Portfolio
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Focus](https://img.shields.io/badge/Focus-Network%20Security%20%26%20SOC-blue)
@@ -12,6 +14,14 @@
 ![Cisco](https://img.shields.io/badge/Cisco-IOS-1BA0D7?logo=cisco)
 ![Fortinet](https://img.shields.io/badge/Fortinet-FortiGate-EE3124?logo=fortinet)
 
+</td>
+<td>
+
+<img src="./assets/profile.jpg" width="130" align="right"/>
+
+</td>
+</tr>
+</table>
 ---
 
 ## 👤 About Me
