@@ -61,6 +61,10 @@ This was my first enterprise switching lab, covering the full Layer 2 to Layer 3
 - DHCP configuration with per-VLAN address pools
 - STP (Spanning Tree Protocol) root bridge configuration
 
+  **Screenshot Full Topology:**
+
+  ![Topology](./01-enterprise-switching/topology.png)
+
 📁 [View Lab →](./01-enterprise-switching/)
 
 ---
