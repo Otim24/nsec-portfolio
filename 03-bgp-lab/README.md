@@ -1,8 +1,8 @@
-# Basic BGP Lab — Multi-AS Routing (EVE-NG)
+# Basic BGP Lab Multi-AS Routing (EVE-NG)
 
 ## Overview
 
-A fully functional 4-Autonomous System BGP network built and verified end-to-end in EVE-NG with 12 routers. This lab covers the complete BGP configuration stack from physical interface addressing through OSPF IGP setup, iBGP full-mesh peering, eBGP inter-AS peering, and next-hop-self route propagation — verified with a successful end-to-end ping from AS64900 to AS64915.
+A fully functional 4-Autonomous System BGP network built and verified end-to-end in EVE-NG with 12 routers. This lab covers the complete BGP configuration stack from physical interface addressing through OSPF IGP setup, iBGP full-mesh peering, eBGP inter-AS peering, and next-hop-self route propagation verified with a successful end-to-end ping from AS64900 to AS64915.
 
 ---
 
@@ -220,12 +220,12 @@ ping 192.168.XX.X                    ! Test direct link before OSPF/BGP
 
 ## Lessons Learned
 
-- OSPF must be fully converged before iBGP sessions can form — always verify `show ip ospf neighbor` shows FULL before touching BGP
-- Interface IPs assigned to the wrong physical port are one of the most common and hardest to spot issues — always verify with `show ip interface brief` and ping across each link before moving to upper layers
-- iBGP uses loopbacks + `update-source loopback0` — forgetting update-source is the most common reason iBGP sessions stay Idle
-- `next-hop-self` is required on every border router — without it, internal routers have no route to external next-hops and all inter-AS traffic fails silently
-- BGP sessions being Established does not automatically mean traffic flows — always verify with an actual end-to-end ping using `source loopback0`
-- The `show running-config | section ospf` filter is case-sensitive in IOS — use lowercase
+- OSPF must be fully converged before iBGP sessions can form always verify `show ip ospf neighbor` shows FULL before touching BGP
+- Interface IPs assigned to the wrong physical port are one of the most common and hardest to spot issues always verify with `show ip interface brief` and ping across each link before moving to upper layers
+- iBGP uses loopbacks + `update-source loopback0`, forgetting update-source is the most common reason iBGP sessions stay Idle
+- `next-hop-self` is required on every border router; without it, internal routers have no route to external next-hops and all inter-AS traffic fails silently
+- BGP sessions being established do not automatically mean traffic flows always verify with an actual end-to-end ping using `source loopback0`
+- The `show running-config | section ospf` filter is case-sensitive in IOS use lowercase
 
 ---
 
