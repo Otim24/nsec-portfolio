@@ -139,6 +139,7 @@ A fully functional 4-Autonomous System BGP network built and verified end-to-end
 ![Ping](./03-bgp-lab/screenshots/r1-ping-r12.png)
 
 📁 [View Lab →](./03-bgp-lab/)
+📄 [Read Full Report →](./03-bgp-lab/BGP-Lab-Report.pdf)
 
 ---
 
@@ -159,7 +160,7 @@ A full SOC analyst lab environment built on VMware Workstation with a virtualize
 - **Suricata** — Network IDS/IPS for traffic inspection and alerting
 
 📁 [View Lab →](./06-soc-labs/)
-📄 [Read Full Report →](./03-bgp-lab/BGP-Lab-Report.pdf)
+
 
 ---
 
