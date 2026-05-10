@@ -159,6 +159,7 @@ A full SOC analyst lab environment built on VMware Workstation with a virtualize
 - **Suricata** — Network IDS/IPS for traffic inspection and alerting
 
 📁 [View Lab →](./06-soc-labs/)
+📄 [Read Full Report →](./03-bgp-lab/BGP-Lab-Report.pdf)
 
 ---
 
