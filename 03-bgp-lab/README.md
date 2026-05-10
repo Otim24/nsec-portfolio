@@ -234,3 +234,5 @@ ping 192.168.XX.X                    ! Test direct link before OSPF/BGP
 - EVE-NG Community Edition
 - Cisco IOSv (vIOS) router images
 - Cisco IOS CLI
+
+📄 [Read Full Report →](./BGP-Lab-Report.pdf)
