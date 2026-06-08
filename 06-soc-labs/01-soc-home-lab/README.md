@@ -1,4 +1,4 @@
-# SOC Home Lab — Attack Detection & Log Analysis
+# SOC Home Lab, Attack Detection & Log Analysis
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Tools](https://img.shields.io/badge/Tools-Wazuh%20%7C%20Splunk%20%7C%20pfSense%20%7C%20Suricata-blue)
@@ -10,7 +10,7 @@
 
 This lab simulates a production Security Operations Centre (SOC) environment built entirely on VMware Workstation. The goal is to practice the complete SOC analyst workflow: design and build the infrastructure, monitor it with industry-standard tools, execute real attack scenarios from a dedicated attacker machine, and detect those attacks through SIEM correlation, log analysis, and a custom-built Splunk detection dashboard.
 
-The lab demonstrates a full Active Directory attack chain — reconnaissance, credential brute force, domain compromise, SAM and LSA credential dumping, Pass-the-Hash lateral movement, and AS-REP Roasting — showing how each stage leaves forensic evidence detectable through Splunk SPL queries and Wazuh real-time alerting.
+The lab demonstrates a full Active Directory attack chain  reconnaissance, credential brute force, domain compromise, SAM and LSA credential dumping, Pass-the-Hash lateral movement, and AS-REP Roasting,  showing how each stage leaves forensic evidence detectable through Splunk SPL queries and Wazuh real-time alerting.
 
 **What this lab covers:**
 
@@ -18,9 +18,9 @@ The lab demonstrates a full Active Directory attack chain — reconnaissance, cr
 - Endpoint detection and response with Wazuh SIEM across a Windows Active Directory environment
 - Centralised log ingestion, threat hunting, and detection engineering with Splunk Enterprise 9.4.1
 - Custom SOC Attack Overview Dashboard built in Splunk with 5 live detection panels
-- Offensive simulation from Kali Linux — Nmap, SMB brute force, SAM and LSA dumping, Pass-the-Hash, AS-REP Roasting
+- Offensive simulation from Kali Linux  Nmap, SMB brute force, SAM and LSA dumping, Pass-the-Hash, AS-REP Roasting
 - Full MITRE ATT&CK technique coverage across T1110.001, T1003.001, T1550.002, and T1558.004
-- Alert triage methodology — distinguishing background noise from active attacks using Logon Type and Source IP analysis
+- Alert triage methodology  distinguishing background noise from active attacks using Logon Type and Source IP analysis
 
 ---
 
@@ -103,7 +103,7 @@ pfSense acts as the central firewall and router across all lab segments. Each in
 
 ## Tools and Technologies
 
-### Wazuh — SIEM and EDR
+### Wazuh  SIEM and EDR
 
 Deployed as an all-in-one installation on Ubuntu, providing real-time endpoint detection across both Windows machines. Wazuh automatically maps detected events to MITRE ATT&CK techniques and fires alerts during active attacks without requiring custom rule configuration.
 
@@ -115,7 +115,7 @@ Deployed as an all-in-one installation on Ubuntu, providing real-time endpoint d
 ![Wazuh Agents Active](screenshots/wazuh-agents-active.png)
 *Both Windows endpoints reporting as Active in Wazuh dashboard*
 
-### Splunk Enterprise — Log Analysis and Detection Engineering
+### Splunk Enterprise  Log Analysis and Detection Engineering
 
 Primary platform for log ingestion, SPL-based threat hunting, alert creation, and the custom SOC dashboard. Windows Security and System event logs forward from both endpoints via Splunk Universal Forwarder over TCP 9997.
 
@@ -125,7 +125,7 @@ Primary platform for log ingestion, SPL-based threat hunting, alert creation, an
 Windows Endpoints (Security.evtx + System.evtx)
         ↓  Splunk Universal Forwarder v10.2.2
         ↓  TCP Port 9997
-        ↓  pfSense rule — ACTIVEDIRECTORY to MONITORING
+        ↓  pfSense rule  ACTIVEDIRECTORY to MONITORING
         ↓
 Ubuntu Splunk Server (10.0.2.10)
         ↓
@@ -134,7 +134,7 @@ Splunk index: main
 Analyst queries and dashboards
 ```
 
-**Critical configuration:** `inputs.conf` must use `WinEventLog://` sourcetypes. Raw file monitoring assigns the `syslog` sourcetype which breaks all field extraction — EventCode, Account_Name, Logon_Type, and src_ip become unsearchable. The `WinEventLog://` API produces properly structured, fully parsed events.
+**Critical configuration:** `inputs.conf` must use `WinEventLog://` sourcetypes. Raw file monitoring assigns the `syslog` sourcetype which breaks all field extraction  EventCode, Account_Name, Logon_Type, and src_ip become unsearchable. The `WinEventLog://` API produces properly structured, fully parsed events.
 
 ```ini
 [WinEventLog://Security]
@@ -170,17 +170,17 @@ disabled = false
 
 ---
 
-## Phase 1 — Reconnaissance
+## Phase 1  Reconnaissance
 
-### Nmap Port Scan — Windows Client
+### Nmap Port Scan  Windows Client
 
 ```bash
 nmap -sS -A 10.0.3.101
 ```
 
-Open ports: 135 (MSRPC), 139 (NetBIOS), 445 (SMB) — Windows 10 Enterprise confirmed.
+Open ports: 135 (MSRPC), 139 (NetBIOS), 445 (SMB)  Windows 10 Enterprise confirmed.
 
-### Nmap Port Scan — Windows Server
+### Nmap Port Scan  Windows Server
 
 ```bash
 nmap -sS -A 10.0.3.2
@@ -202,9 +202,9 @@ Ports 88, 389, and 3268 together identify an Active Directory Domain Controller.
 
 ---
 
-## Phase 2 — SMB Brute Force
+## Phase 2  SMB Brute Force
 
-**MITRE ATT&CK:** T1110.001 — Brute Force: Password Guessing
+**MITRE ATT&CK:** T1110.001  Brute Force: Password Guessing
 
 ```bash
 netexec smb 10.0.3.2 -u Administrator -p /usr/share/wordlists/rockyou.txt --ignore-pw-decoding
@@ -213,7 +213,7 @@ netexec smb 10.0.3.2 -u Administrator -p /usr/share/wordlists/rockyou.txt --igno
 netexec systematically tested 14,344,399 passwords from rockyou.txt over SMB port 445. Each failure generated a `EventCode 4625` on the server. The successful password produced a single `EventCode 4624`.
 
 ![SMB Brute Force Attack](screenshots/smb-brute-attack.png)
-*netexec brute force — STATUS_LOGON_FAILURE on each attempt, ending with Pwn3d!*
+*netexec brute force  STATUS_LOGON_FAILURE on each attempt, ending with Pwn3d!*
 
 ```
 SMB  10.0.3.2  445  WINSERVER  [-] soc.local\Administrator:123456 STATUS_LOGON_FAILURE
@@ -224,7 +224,7 @@ SMB  10.0.3.2  445  WINSERVER  [+] soc.local\Administrator:Newpassword123 (Pwn3d
 
 ---
 
-## Phase 3 — Detection in Splunk
+## Phase 3  Detection in Splunk
 
 ### Brute Force Detection
 
@@ -234,19 +234,19 @@ index=main sourcetype=WinEventLog:Security EventCode=4625 Account_Name=Administr
 ```
 
 ![SMB Brute Force Detection](screenshots/smb-brute-detection-splunk.png)
-*Splunk confirming Logon Type 3 traffic from 10.0.1.10 — remote SMB brute force identified*
+*Splunk confirming Logon Type 3 traffic from 10.0.1.10  remote SMB brute force identified*
 
 **Expanded 4625 event analysis:**
 
 | Indicator | Value | Meaning |
 |-----------|-------|---------|
-| Logon Type | 3 | Network logon via SMB — remote attack confirmed |
-| Sub Status | 0xC000006A | Correct username, wrong password — brute force fingerprint |
-| Source IP | 10.0.1.10 | Kali Linux — the attacker |
-| Volume | 8,243 events | Automated tooling — no human types this fast |
+| Logon Type | 3 | Network logon via SMB  remote attack confirmed |
+| Sub Status | 0xC000006A | Correct username, wrong password  brute force fingerprint |
+| Source IP | 10.0.1.10 | Kali Linux  the attacker |
+| Volume | 8,243 events | Automated tooling  no human types this fast |
 
 ![Event 4625 Expanded](screenshots/event-4625-expanded.png)
-*Expanded EventCode 4625 — Sub Status 0xC000006A and Logon Type 3 confirm the attack*
+*Expanded EventCode 4625  Sub Status 0xC000006A and Logon Type 3 confirm the attack*
 
 ### Attack Volume Timechart
 
@@ -256,11 +256,11 @@ index=main sourcetype=WinEventLog:Security EventCode=4625
 ```
 
 ![Brute Force Timechart](screenshots/smb-brute-timechart.png)
-*8,243 events spiking between 10:57 and 11:00 AM — the automated tool signature is unmistakable*
+*8,243 events spiking between 10:57 and 11:00 AM  the automated tool signature is unmistakable*
 
 The narrow spike confirms automated tooling. Human guessing produces low-frequency, irregular events. A spike of 600+ events per 10-second window is a tool, not a person.
 
-### Critical Triage Skill — Noise vs Real Attack
+### Critical Triage Skill  Noise vs Real Attack
 
 Before the attack started, 279 failed logins appeared on the Administrator account. Same Event ID, completely different meaning:
 
@@ -292,13 +292,13 @@ Elevated Token: Yes
 Source IP:      10.0.1.10
 ```
 
-Logon Type 3, Elevated Token Yes, source IP matching Kali — confirmed domain compromise.
+Logon Type 3, Elevated Token Yes, source IP matching Kali  confirmed domain compromise.
 
 ---
 
-## Phase 4 — Post-Exploitation: Credential Dumping
+## Phase 4  Post-Exploitation: Credential Dumping
 
-**MITRE ATT&CK:** T1003.001 — OS Credential Dumping: LSASS Memory
+**MITRE ATT&CK:** T1003.001  OS Credential Dumping: LSASS Memory
 
 ### LSA Secrets Dump
 
@@ -318,14 +318,14 @@ netexec smb 10.0.3.2 -u Administrator -p 'Newpassword123' --sam
 netexec smb 10.0.3.101 -u Administrator -p 'Newpassword123' --sam
 ```
 
-SAM hashes extracted from both WINSERVER (3 hashes: Administrator, Guest, DefaultAccount) and CLIENT01 (5 hashes including User1 — a domain-joined local account).
+SAM hashes extracted from both WINSERVER (3 hashes: Administrator, Guest, DefaultAccount) and CLIENT01 (5 hashes including User1  a domain-joined local account).
 
 ![SAM Dump Both Machines](screenshots/SAM-dump-both-machines.png)
-*SAM dumps from WINSERVER and CLIENT01 — Administrator NTLM hash identical on both machines*
+*SAM dumps from WINSERVER and CLIENT01  Administrator NTLM hash identical on both machines*
 
-### Phase 5 — Pass-the-Hash Lateral Movement Attempt
+### Phase 5  Pass-the-Hash Lateral Movement Attempt
 
-**MITRE ATT&CK:** T1550.002 — Use Alternate Authentication Material: Pass-the-Hash
+**MITRE ATT&CK:** T1550.002  Use Alternate Authentication Material: Pass-the-Hash
 
 With the Administrator NTLM hash from the SAM dump, Pass-the-Hash was attempted against both machines:
 
@@ -334,27 +334,27 @@ netexec smb 10.0.3.2 -u Administrator -H 857807b8eed31c2ee049c1089175a0bd
 netexec smb 10.0.3.101 -u Administrator -H 857807b8eed31c2ee049c1089175a0bd
 ```
 
-Both returned `STATUS_LOGON_FAILURE`. The reason: Windows Server 2019 has credential protections enabled by default — specifically, the local Administrator account is protected against PtH via network logon when the account was used to set the initial domain. This is the expected behaviour in a hardened environment and demonstrates why detection engineers must understand both attack techniques and their mitigations.
+Both returned `STATUS_LOGON_FAILURE`. The reason: Windows Server 2019 has credential protections enabled by default  specifically, the local Administrator account is protected against PtH via network logon when the account was used to set the initial domain. This is the expected behaviour in a hardened environment and demonstrates why detection engineers must understand both attack techniques and their mitigations.
 
 ![Pass-the-Hash Attempts](screenshots/PERFORMING-PASS-THE-HASH.png)
-*PtH attempts against both machines — STATUS_LOGON_FAILURE confirms Windows credential protections active*
+*PtH attempts against both machines  STATUS_LOGON_FAILURE confirms Windows credential protections active*
 
 ---
 
-## Phase 6 — AS-REP Roasting
+## Phase 6  AS-REP Roasting
 
-**MITRE ATT&CK:** T1558.004 — Steal or Forge Kerberos Tickets: AS-REP Roasting
+**MITRE ATT&CK:** T1558.004  Steal or Forge Kerberos Tickets: AS-REP Roasting
 
-AS-REP Roasting targets Active Directory accounts with Kerberos pre-authentication disabled. These accounts respond to unauthenticated TGT requests with an encrypted ticket that can be cracked offline — no credentials required.
+AS-REP Roasting targets Active Directory accounts with Kerberos pre-authentication disabled. These accounts respond to unauthenticated TGT requests with an encrypted ticket that can be cracked offline  no credentials required.
 
 ```bash
 netexec ldap 10.0.3.2 -u Administrator -p 'Newpassword123' --asreproast output.txt
 ```
 
 ![AS-REP Roasting Attack](screenshots/AS-REP-Roasting.png)
-*netexec AS-REP Roast — jsmith Kerberos hash extracted and saved to output.txt for offline cracking*
+*netexec AS-REP Roast  jsmith Kerberos hash extracted and saved to output.txt for offline cracking*
 
-The jsmith account responded with a full `$krb5asrep$23$` Kerberos hash — ready for offline cracking with hashcat or john. This means an attacker with this hash can attempt to recover jsmith's plaintext password without any further interaction with the domain.
+The jsmith account responded with a full `$krb5asrep$23$` Kerberos hash  ready for offline cracking with hashcat or john. This means an attacker with this hash can attempt to recover jsmith's plaintext password without any further interaction with the domain.
 
 ### AS-REP Roasting Detection in Splunk
 
@@ -364,7 +364,7 @@ index=main sourcetype=WinEventLog:Security EventCode=4768
 ```
 
 ![AS-REP Roasting Detection](screenshots/AS-REP-Roasting-detection.png)
-*Splunk EventCode 4768 showing 132 events — jsmith account visible with Result_Code 0x0 (TGT issued without pre-auth)*
+*Splunk EventCode 4768 showing 132 events  jsmith account visible with Result_Code 0x0 (TGT issued without pre-auth)*
 
 132 EventCode 4768 events captured. The jsmith account appearing with Result_Code `0x0` (success) when no interactive session exists is the AS-REP Roasting detection signature. Normal TGT requests from domain-joined machines (WINSERVER$, CLIENT01$) provide the baseline for comparison.
 
@@ -378,37 +378,37 @@ A custom Splunk dashboard was built to provide real-time visibility across all a
 **URL:** `http://10.0.2.10:8000/en-US/app/search/soc_attack_overview_dashboard`
 
 ![Dashboard Panel 1](screenshots/Dashboard1.png)
-*Panel 1 — Authentication Failures: 8,243 total EventCode 4625 events with brute force attack timeline showing the spike at 10:57–11:00 AM*
+*Panel 1  Authentication Failures: 8,243 total EventCode 4625 events with brute force attack timeline showing the spike at 10:57–11:00 AM*
 
 ![Dashboard Panel 2](screenshots/Dashboard2.png)
-*Panel 2 — Account Targeting: Top targeted accounts bar chart (Administrator dominant) and Successful Logins count (327 EventCode 4624 events)*
+*Panel 2  Account Targeting: Top targeted accounts bar chart (Administrator dominant) and Successful Logins count (327 EventCode 4624 events)*
 
 ![Dashboard Panel 3](screenshots/Dashboard3.png)
-*Panel 3 — Privilege Escalation: EventCode 4672 by account — Administrator entry with count 1 immediately post-breach is the credential dumping detection signal*
+*Panel 3  Privilege Escalation: EventCode 4672 by account  Administrator entry with count 1 immediately post-breach is the credential dumping detection signal*
 
 **Dashboard panels and their detection purpose:**
 
 | Panel | SPL Basis | What It Detects |
 |-------|-----------|-----------------|
 | Total Failed Logins | EventCode 4625 count | Brute force volume at a glance |
-| Brute Force Attack Timeline | 4625 timechart | Automated tooling signature — the spike |
+| Brute Force Attack Timeline | 4625 timechart | Automated tooling signature  the spike |
 | Top Targeted Accounts | 4625 stats by Account_Name | Identifies the account under attack |
 | Successful Logins | EventCode 4624 count | Confirms breach when it follows a 4625 spike |
-| Privilege Escalation | EventCode 4672 by Account_Name | SeDebugPrivilege assigned — credential dumping signal |
+| Privilege Escalation | EventCode 4672 by Account_Name | SeDebugPrivilege assigned  credential dumping signal |
 
 ### Brute Force Threshold Alert
 
-A Splunk saved alert was configured to trigger automatically when brute force conditions are met — no manual hunting required.
+A Splunk saved alert was configured to trigger automatically when brute force conditions are met  no manual hunting required.
 
 ![Saving Brute Force Alert](screenshots/SAVING-BRUTE-FORCE-ALERT.png)
-*Brute force statistics saved as a Splunk alert — automated detection without manual SPL queries*
+*Brute force statistics saved as a Splunk alert  automated detection without manual SPL queries*
 
 ---
 
 ## Complete Attack Chain Summary
 
 ```
-[Kali Linux — 10.0.1.10]
+[Kali Linux  10.0.1.10]
         │
         ├── 1. Nmap -sS -A ──────────────────────── Reconnaissance
         │          Identifies Domain Controller, open ports, OS
@@ -430,12 +430,12 @@ A Splunk saved alert was configured to trigger automatically when brute force co
         │
         ├── 5. netexec -H [NTLM hash] ───────────── Pass-the-Hash   T1550.002
         │          Attempted against both machines
-        │          STATUS_LOGON_FAILURE — Windows protections active
+        │          STATUS_LOGON_FAILURE  Windows protections active
         │          Detection: EventCode 4648
         │
         └── 6. netexec ldap --asreproast ─────────── AS-REP Roasting   T1558.004
                    jsmith hash extracted
-                   Detection: EventCode 4768 — TGT without pre-auth
+                   Detection: EventCode 4768  TGT without pre-auth
 ```
 
 ---
@@ -485,19 +485,19 @@ index=main sourcetype=WinEventLog:Security
 
 ## Lessons Learned
 
-**Wazuh download timeouts** — The Wazuh Indexer package is 874MB and times out on slower connections. Running `sudo bash wazuh-install.sh -a -o` retries with an overwrite flag and resolves this cleanly.
+**Wazuh download timeouts**  The Wazuh Indexer package is 874MB and times out on slower connections. Running `sudo bash wazuh-install.sh -a -o` retries with an overwrite flag and resolves this cleanly.
 
-**Splunk sourcetype misconfiguration** — Using `add monitor` with raw `.evtx` paths assigns the `syslog` sourcetype and breaks all Windows field extraction. The correct method is `WinEventLog://` in `inputs.conf` which uses the Windows Event Log API and produces fully parsed, searchable events.
+**Splunk sourcetype misconfiguration**  Using `add monitor` with raw `.evtx` paths assigns the `syslog` sourcetype and breaks all Windows field extraction. The correct method is `WinEventLog://` in `inputs.conf` which uses the Windows Event Log API and produces fully parsed, searchable events.
 
-**Cross-subnet routing blocked by default** — pfSense denies all inter-subnet traffic by default. Explicit rules were required on the ACTIVEDIRECTORY interface (TCP 9997 for Splunk) and LAN interface (any from Kali to AD subnet) before any log forwarding or attack traffic would flow.
+**Cross-subnet routing blocked by default**  pfSense denies all inter-subnet traffic by default. Explicit rules were required on the ACTIVEDIRECTORY interface (TCP 9997 for Splunk) and LAN interface (any from Kali to AD subnet) before any log forwarding or attack traffic would flow.
 
-**SMB tooling compatibility** — Hydra's SMB module does not support SMBv2/v3 required by Windows Server 2019. netexec handles modern SMB correctly and provides integrated post-exploitation modules including `--lsa`, `--sam`, and `--asreproast` for the full attack chain.
+**SMB tooling compatibility**  Hydra's SMB module does not support SMBv2/v3 required by Windows Server 2019. netexec handles modern SMB correctly and provides integrated post-exploitation modules including `--lsa`, `--sam`, and `--asreproast` for the full attack chain.
 
-**Pass-the-Hash blocked by Windows credential protections** — Windows Server 2019 has network logon restrictions on local Administrator accounts enabled by default. PtH with NTLM hashes returns STATUS_LOGON_FAILURE against a hardened domain. Understanding why an attack fails is as important as understanding why it succeeds.
+**Pass-the-Hash blocked by Windows credential protections**  Windows Server 2019 has network logon restrictions on local Administrator accounts enabled by default. PtH with NTLM hashes returns STATUS_LOGON_FAILURE against a hardened domain. Understanding why an attack fails is as important as understanding why it succeeds.
 
-**Alert triage — same Event ID, different meaning** — EventCode 4625 can represent background noise (Logon Type 7, localhost) or an active attack (Logon Type 3, external IP). Logon Type and Source IP together determine which is which — this is the foundational triage skill for any SOC analyst.
+**Alert triage  same Event ID, different meaning**  EventCode 4625 can represent background noise (Logon Type 7, localhost) or an active attack (Logon Type 3, external IP). Logon Type and Source IP together determine which is which  this is the foundational triage skill for any SOC analyst.
 
-**Credential dumping requires hunting, not just alerting** — Post-exploitation with valid credentials generates zero 4625 events. Detection requires correlating 4624 and 4672 together from anomalous source IPs. The dashboard Privilege Escalation panel was built specifically to surface this pattern without requiring manual SPL queries every shift.
+**Credential dumping requires hunting, not just alerting**  Post-exploitation with valid credentials generates zero 4625 events. Detection requires correlating 4624 and 4672 together from anomalous source IPs. The dashboard Privilege Escalation panel was built specifically to surface this pattern without requiring manual SPL queries every shift.
 
 ---
 
@@ -542,4 +542,4 @@ index=main sourcetype=WinEventLog:Security
 
 ---
 
-*Part of the [nsec-portfolio](https://github.com/Otim24/nsec-portfolio) — documenting the path to CCNP Security and SOC Engineering.*
+*Part of the [nsec-portfolio](https://github.com/Otim24/nsec-portfolio)  documenting the path to CCNP Security and SOC Engineering.*
