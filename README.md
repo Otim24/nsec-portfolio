@@ -144,7 +144,7 @@ A fully functional 4-Autonomous System BGP network built and verified end-to-end
 
 ---
 
-### Lab 06  SOC Home Lab  Active Directory Attack Chain & Detection
+### Lab 04  SOC Home Lab  Active Directory Attack Chain & Detection
 
 **Platform:** VMware Workstation  
 **Focus:** Security Operations | SIEM | Threat Detection | Active Directory Attack Simulation
