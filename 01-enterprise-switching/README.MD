@@ -173,3 +173,6 @@ ip helper-address 192.168.10.254
 - Cisco IOS CLI
 - Cisco 2960-24TT Switches
 - Cisco 2811 Router
+
+[![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Timothy%20Otim%20Lutara-blue?logo=linkedin)](https://www.linkedin.com/in/timothy-otim-lutara)
