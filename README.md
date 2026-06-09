@@ -46,7 +46,7 @@ nsec-portfolio/
 ├── 03-bgp-lab/
 │   └── EVE-NG Multi-AS BGP topology, OSPF IGP, iBGP full mesh, eBGP inter-AS, next-hop-self
 │
-└── 06-soc-lab/                        
+└── 04-soc-lab/                        
     └── VMware pfSense, Splunk, Suricata, Windows Server AD, Kali Linux
 ```
 
