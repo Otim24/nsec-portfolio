@@ -175,7 +175,7 @@ A fully operational SOC analyst environment simulating a real enterprise Active 
 ![SOC Attack Overview Dashboard](./06-soc-labs/01-soc-home-lab/screenshots/Dashboard1.png)
 *Custom Splunk dashboard — 8,243 authentication failures and brute force attack timeline spike*
 
-📁 [View Lab →](./06-soc-labs/)
+📁 [View Lab →](./04-soc-lab/)
 
 ---
 
