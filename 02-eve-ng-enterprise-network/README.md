@@ -293,4 +293,4 @@ end
 BSc Information Technology (Cybersecurity) ISBAT University, Kampala  
 Targeting: Network Security Engineer | CCNP Security | NSE Certification Path  
 
-[GitHub](https://github.com/your-github-username) | [LinkedIn](www.linkedin.com/in/timothy-otim-lutara)
+[GitHub](https://github.com/Otim24) | [LinkedIn](www.linkedin.com/in/timothy-otim-lutara)
