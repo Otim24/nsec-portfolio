@@ -542,4 +542,7 @@ index=main sourcetype=WinEventLog:Security
 
 ---
 
+[![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Timothy%20Otim%20Lutara-blue?logo=linkedin)](https://www.linkedin.com/in/timothy-otim-lutara)
+
 *Part of the [nsec-portfolio](https://github.com/Otim24/nsec-portfolio)  documenting the path to CCNP Security and SOC Engineering.*
