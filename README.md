@@ -179,9 +179,6 @@ A fully operational SOC analyst environment simulating a real enterprise Active 
 
 ---
 
-
----
-
 ## 🌍 Connect With Me
 
 [![GitHub](https://img.shields.io/badge/GitHub-Otim24-black?logo=github)](https://github.com/Otim24)
