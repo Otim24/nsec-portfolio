@@ -144,23 +144,40 @@ A fully functional 4-Autonomous System BGP network built and verified end-to-end
 
 ---
 
-### Lab 06, SOC Home Lab
+### Lab 06 — SOC Home Lab — Active Directory Attack Chain & Detection
 
 **Platform:** VMware Workstation  
-**Focus:** Security Operations | SIEM | IDS/IPS | Threat Detection
+**Focus:** Security Operations | SIEM | Threat Detection | Active Directory Attack Simulation
 
-A full SOC analyst lab environment built on VMware Workstation with a virtualized enterprise network including Active Directory, endpoint monitoring, network intrusion detection, and centralized log analysis via Splunk.
+A fully operational SOC analyst environment simulating a real enterprise Active Directory network under attack. The lab covers the complete offensive and defensive cycle — build the infrastructure, attack it from a dedicated Kali Linux machine, and detect every stage through Splunk SPL queries, Wazuh real-time alerting, and a custom-built SOC Attack Overview Dashboard.
 
 **Lab Environment (~95GB):**
-- **pfSense** — Perimeter firewall and network gateway
-- **Ubuntu Server** — Linux server for services and log forwarding
-- **Windows Server 2019** — Active Directory Domain Controller
-- **Windows 10 Client** — Domain-joined endpoint
-- **Kali Linux** — Attacker machine for simulated attack scenarios
-- **Splunk** — SIEM for log ingestion, dashboards, and alerting
-- **Suricata** — Network IDS/IPS for traffic inspection and alerting
+- **pfSense** — Perimeter firewall across 4 isolated network zones (LAN, MONITORING, ACTIVEDIRECTORY, VULNERABLE)
+- **Ubuntu Server** — Hosts Splunk Enterprise 9.4.1 and Wazuh 4.14.5 all-in-one
+- **Windows Server 2019** — Active Directory Domain Controller (soc.local)
+- **Windows 10 Client** — Domain-joined endpoint with Splunk UF and Wazuh Agent
+- **Kali Linux 2026.1** — Dedicated attacker machine
+
+**Attack Scenarios Executed (MITRE ATT&CK mapped):**
+- SMB Brute Force against Domain Administrator — 8,243 EventCode 4625 failures detected in Splunk (T1110.001)
+- LSA Secrets and SAM database extraction from WINSERVER and CLIENT01 (T1003.001)
+- Pass-the-Hash lateral movement attempt with NTLM hashes — Windows credential protections documented (T1550.002)
+- AS-REP Roasting against jsmith account — Kerberos hash extracted, EventCode 4768 detection in Splunk (T1558.004)
+
+**Detection Engineering:**
+- Custom SPL queries for brute force detection, privilege escalation correlation, and Kerberos abuse
+- SOC Attack Overview Dashboard with 5 live panels — authentication failures, attack timeline, account targeting, successful logins, and privilege escalation
+- Saved brute force threshold alert — automated detection without manual hunting
+- Wazuh real-time MITRE ATT&CK-mapped alerts running alongside Splunk historical correlation
+
+**Screenshot — SOC Attack Overview Dashboard:**
+
+![SOC Attack Overview Dashboard](./06-soc-labs/01-soc-home-lab/screenshots/Dashboard1.png)
+*Custom Splunk dashboard — 8,243 authentication failures and brute force attack timeline spike*
 
 📁 [View Lab →](./06-soc-labs/)
+
+---
 
 
 ---
