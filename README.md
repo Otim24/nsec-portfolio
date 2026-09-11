@@ -16,7 +16,7 @@
 </td>
 <td>
 
-<img src="./assets/profile.jpg" width="130" align="right"/>
+<img src="./assets/profile1.jpg" width="130" align="right"/>
 
 </td>
 </tr>
